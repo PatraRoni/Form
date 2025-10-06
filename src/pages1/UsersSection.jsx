@@ -103,35 +103,39 @@ export default function UsersSection({ initialUsers }) {
       <div className="h-1 mt-3 w-full bg-transparent border-t border-[#2F2F2F]" />
 
       {/* Search */}
-      <div className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-  {/* left: search — full width on mobile, capped on md+ */}
-        <div className="w-full md:max-text-[10px] font-poppins text-[#999999] mt-1">
+        {/* container: stacked on small screens, side-by-side on md+ */}
+        <div className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3 mt-2">
+
+        {/* search: full width on mobile, limited on md+ */}
+        <div className="w-full md:max-w-md">
             <label htmlFor="user-search" className="sr-only">Search users</label>
             <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search size={16} className="text-gray-400" />
             </div>
+
             <input
                 id="user-search"
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search User"
-                className="w-full pl-10 pr-3 py-2 bg-[#0f0f10] border border-white/6 rounded text-sm placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-white/10"
+                className="w-full pl-10 pr-3 py-2 bg-[#2F2F2F] border border-white/6 rounded text-sm placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-white/10 font-poppins text-[#999999]"
             />
             </div>
         </div>
 
-        {/* right: actions — won't shrink */}
+        {/* right: actions — won't shrink and stays to the right on md+ */}
         <div className="flex items-center gap-3 flex-shrink-0">
             <button
             type="button"
-            className="flex items-center gap-2 text-sm px-3 py-1 bg-white/6 rounded hover:bg-white/8 transition"
+            className="flex items-center gap-2 text-sm px-3 py-2 bg-[#2F2F2F] rounded hover:bg-white/8 transition"
             >
             <Plus size={14} /> <span>New User</span>
             </button>
         </div>
         </div>
+
 
       {/* Table container */}
       <div className="overflow-x-auto">
