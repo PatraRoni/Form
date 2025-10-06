@@ -4,11 +4,12 @@ import ProfileSection from './pages1/ProfileSection'
 import NotificationsPanel from './pages1/NotificationsPanel'
 import UsageSummary from './pages1/UsageSummary'
 import BillingSection from './pages1/BillingSection'
+import UsersSection from './pages1/UsersSection'
 
 const App = () => {
   return (
      <div>
-      <BillingSection/>
+      <UsersSection/>
       </div>
   )
 }
